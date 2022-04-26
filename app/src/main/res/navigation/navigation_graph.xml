@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.notesapp.ui.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_home22"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.notesapp.ui.ListOfNotes"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_list_of_notes" >
+        <action
+            android:id="@+id/action_home2_to_add_Notes"
+            app:destination="@id/add_Notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Notes"
+        android:name="com.example.notesapp.ui.AddorEditNotes"
+        android:label="fragment_add_notes"
+        tools:layout="@layout/fragment_add_or_edit_notes" >
+        <argument
+            android:name="noteId"
+            app:argType="com.example.notesapp.database.Notes"
+            android:defaultValue="-1L"
+            app:nullable="false" />
+    </fragment>
+</navigation>

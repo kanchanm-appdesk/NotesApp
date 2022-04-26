@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AddorEditNotes">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/add_title_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:textSize="40sp"
+        android:padding="10dp"
+        android:background="@null"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/add_description_et"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:gravity="start"
+        android:hint="Description"
+        android:background="@null"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:backgroundTint="@color/purple_200"
+        android:textSize="30sp"
+        android:layout_gravity="center"/>
+</LinearLayout>
+
+</FrameLayout>

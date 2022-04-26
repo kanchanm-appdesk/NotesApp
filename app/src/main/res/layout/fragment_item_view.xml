@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/itemContainer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    tools:context=".ui.ItemView">
+
+<LinearLayout
+    android:id="@+id/note_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EDE1FD"
+    android:orientation="vertical"
+    android:layout_margin="6dp"
+    android:padding="@dimen/cardview_compat_inset_shadow"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/titleTv"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="1dp"
+        android:background="@color/purple_200" />
+
+
+    <TextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:text="Description"
+        android:textSize="15sp"
+        android:padding="11dp"/>
+    <ImageView
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_gravity="end"
+        android:src="@drawable/ic_baseline_delete_24"/>
+
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
