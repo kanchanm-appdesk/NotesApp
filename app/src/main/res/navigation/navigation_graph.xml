@@ -11,16 +11,16 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreen_to_home22"
-            app:destination="@id/home2" />
+            android:id="@+id/action_splashScreen_to_listOfNotes"
+            app:destination="@id/listOfNotes" />
     </fragment>
     <fragment
-        android:id="@+id/home2"
+        android:id="@+id/listOfNotes"
         android:name="com.example.notesapp.ui.ListOfNotes"
         android:label="fragment_home"
         tools:layout="@layout/fragment_list_of_notes" >
         <action
-            android:id="@+id/action_home2_to_add_Notes"
+            android:id="@+id/action_listOfNotes_to_add_Notes"
             app:destination="@id/add_Notes" />
     </fragment>
     <fragment
@@ -30,8 +30,9 @@
         tools:layout="@layout/fragment_add_or_edit_notes" >
         <argument
             android:name="noteId"
-            app:argType="com.example.notesapp.database.Notes"
+            app:argType="long"
             android:defaultValue="-1L"
-            app:nullable="false" />
+            app:nullable="false"/>
+
     </fragment>
 </navigation>

@@ -35,13 +35,13 @@ class SplashScreen : Fragment() {
                 splashScreenTimer()
             }
             else ->
-                findNavController().navigate(SplashScreenDirections.actionSplashScreenToHome22())
+                findNavController().navigate(SplashScreenDirections.actionSplashScreenToListOfNotes())
         }
     }
 
     private fun splashScreenTimer() {
         Handler(Looper.getMainLooper()).postDelayed({
-            findNavController().navigate(SplashScreenDirections.actionSplashScreenToHome22())
+            findNavController().navigate(SplashScreenDirections.actionSplashScreenToListOfNotes())
         }, 3000)
     }
 }

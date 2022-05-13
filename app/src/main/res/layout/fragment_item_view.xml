@@ -8,8 +8,7 @@
     android:layout_columnWeight="1"
     android:layout_rowWeight="1"
     app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
-    tools:context=".ui.ItemView">
+    app:cardCornerRadius="8dp">
 
 <LinearLayout
     android:id="@+id/note_card_view"

@@ -21,8 +21,8 @@ import kotlinx.coroutines.launch
 class AddorEditNotes : Fragment(){
 
     private lateinit var binding: FragmentAddOrEditNotesBinding
-            private val args: AddorEditNotesArgs by navArgs()
-            lateinit var viewModel: NotesViewModel
+    private val args: AddorEditNotesArgs by navArgs()
+    lateinit var viewModel: NotesViewModel
 
 
     override fun onCreateView(
@@ -32,7 +32,7 @@ class AddorEditNotes : Fragment(){
         binding = FragmentAddOrEditNotesBinding.inflate(inflater, container, false)
         return binding.root
 
-        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,8 +45,8 @@ class AddorEditNotes : Fragment(){
         }
         // fetching data from database to view
 
-        if (args.noteId.id != -1L) {
-            setOldNoteData(args.noteId.id)
+        if (args.noteId != -1L) {
+            setOldNoteData(args.noteId)
         }
     }
 
@@ -54,10 +54,10 @@ class AddorEditNotes : Fragment(){
         val title = binding.addTitleEt.text.toString()
         val description = binding.addDescriptionEt.text.toString()
         if (title.isNotBlank() && description.isNotBlank()) {
-            val note = if (args.noteId.id == -1L) {
+            val note = if (args.noteId == -1L) {
                 Notes(title, description)
             } else {
-                Notes(title, description, args.noteId.id)
+                Notes(title, description, args.noteId)
             }
             viewModel.addNotes(note)
             Toast.makeText(context, "Note Is Saved Successfully", Toast.LENGTH_SHORT).show()

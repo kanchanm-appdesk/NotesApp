@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.notesapp.NoteApplication
 import com.example.notesapp.R
+import com.example.notesapp.database.Notes
 import com.example.notesapp.databinding.FragmentListOfNotesBinding
 import com.example.notesapp.recylerView.RecyclerViewAdapter
 import com.example.notesapp.viewModel.NotesViewModel
@@ -21,7 +22,6 @@ import com.example.notesapp.viewModel.NotesViewModelFactory
 
 
 class ListOfNotes : Fragment() {
-
 
     private lateinit var binding: FragmentListOfNotesBinding
     private lateinit var viewModel: NotesViewModel
@@ -46,7 +46,7 @@ class ListOfNotes : Fragment() {
         setUpRecyclerView()
 
         binding.addNoteBtn.setOnClickListener {
-            Navigation.findNavController(requireView()).navigate(ListOfNotesDirections.actionHome2ToAddNotes())
+            Navigation.findNavController(requireView()).navigate(ListOfNotesDirections.actionListOfNotesToAddNotes())
         }
 
         backButtonHandle()
@@ -71,15 +71,14 @@ class ListOfNotes : Fragment() {
                 )
             )
             binding.recylerView.layoutManager = LinearLayoutManager(context)
-            //   binding.recyclerView.adapter = RecyclerViewAdapter(it, this)
             binding.recylerView.adapter =
                 RecyclerViewAdapter(it, { note -> viewModel.deleteNotes(note) },
-                    { note -> changeFrag() })
+                    { note -> changeFrag(note) })
         }
     }
-    fun changeFrag() {
+    fun changeFrag(note: Notes) {
         findNavController().navigate(
-            ListOfNotesDirections.actionHome2ToAddNotes()
+            ListOfNotesDirections.actionListOfNotesToAddNotes()
         )
     }
 }
