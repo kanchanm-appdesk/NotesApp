@@ -78,7 +78,7 @@ class ListOfNotes : Fragment() {
     }
     fun changeFrag(note: Notes) {
         findNavController().navigate(
-            ListOfNotesDirections.actionListOfNotesToAddNotes()
+            ListOfNotesDirections.actionListOfNotesToAddNotes(note.id)
         )
     }
 }
